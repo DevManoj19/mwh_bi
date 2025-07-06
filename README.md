@@ -29,19 +29,17 @@ A scalable, GDPR-compliant DID system designed for integration with [Dataverse](
 ## 🏗️ Installation
 
 ### 1. Python Dependencies
-```bash
-pip install cryptography requests
 
-External Dependencies (for Dataverse)
+Run: `pip install cryptography requests`
+
+### 2. External Dependencies (for Dataverse)
 These are not installed in the notebook directly:
 
- Java 11+
+- Java 11+  
+- Payara Server or GlassFish  
+- PostgreSQL 13+  
+- Solr (for search indexing)  
 
- Payara Server or GlassFish
-
- PostgreSQL 13+
-
- Solr (for search indexing)
 
 📁 Folder Structure
 bash
