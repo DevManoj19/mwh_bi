@@ -103,4 +103,4 @@ MIT License – Open Source & Community Driven
 ### 👨‍💻 Contributors
 DevManoj19  – DID Architecture & Research
 
-Eshrath Subhani – Documentation & Testing
+Eshrathsubhani – Documentation & Testing
