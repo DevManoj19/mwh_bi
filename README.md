@@ -32,8 +32,6 @@ A scalable, GDPR-compliant DID system designed for integration with [Dataverse](
 
 Run: `pip install cryptography requests`
 
----
-
 ### 2. External Dependencies (for Dataverse)
 These are not installed in the notebook directly:
 
@@ -46,9 +44,9 @@ These are not installed in the notebook directly:
 
 ## 📁 Folder Structure
 
-mwh_bi.ipynb        # Main notebook (development + documentation)
-.env                # Environment file for secure keys (if any)
-README.md           # Project overview and setup guide
+-mwh_bi.ipynb        # Main notebook (development + documentation)
+-.env                # Environment file for secure keys (if any)
+-README.md           # Project overview and setup guide
 
 ---
 
