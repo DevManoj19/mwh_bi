@@ -51,8 +51,6 @@ project-root/
 
 ## 🏗️ Installation Guide
 
-## 🏗️ Installation Guide
-
 ### 1. Python Dependencies
 
 Install required Python libraries:
@@ -60,8 +58,9 @@ Install required Python libraries:
 ```bash
 pip install didkit pyld requests cryptography
 ```
+---
 
-Dataverse Backend Setup (manual)
+### Dataverse Backend Setup (manual)
 Required for full Dataverse API integration.
 
 Install Java 11+
@@ -74,7 +73,8 @@ Configure Solr for search indexing
 
 Configure .env if needed for API keys
 
-🔐 Key Functional Blocks
+---
+### 🔐 Key Functional Blocks
 W3C DID Concepts Implemented
 DID Subject
 
@@ -85,8 +85,9 @@ Verification Methods (Ed25519 public keys)
 Service Endpoints (optional)
 
 DID Resolution & Controllers
+---
 
-📋 Verifiable Credential Workflow
+### 📋 Verifiable Credential Workflow
 Generate Ed25519 key using DIDKit
 
 Create a DID and DID Document
@@ -98,8 +99,9 @@ Sign VC using DIDKit
 Verify using DIDKit (errors: [] if success)
 
 Optionally link to Filecoin/IPFS for permanent storage
+---
 
-📡 Example Use Case
+### 📡 Example Use Case
 A researcher logs in using a self-sovereign DID.
 
 Metadata about cultural datasets is validated using AI or manually entered.
@@ -109,4 +111,64 @@ The metadata is signed as a verifiable credential and linked to the DID.
 DID Document stores service endpoints pointing to Dataverse.
 
 GDPR-compliance is achieved by user-controlled visibility of metadata.
+---
 
+### 📦 Sample Credential Output
+```bash
+json
+{
+  "@context": ["https://www.w3.org/2018/credentials/v1"],
+  "type": ["VerifiableCredential"],
+  "issuer": "did:key:z6Mk...",
+  "issuanceDate": "2025-07-05T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:key:z6Mk...",
+    "contribution": "Digitised 19th-century manuscript"
+  },
+  "proof": {
+    "type": "Ed25519Signature2020",
+    "created": "...",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "...",
+    "jws": "..."
+  }
+}
+```
+---
+
+### 📈 Future Work
+🔗 Integrate with IPFS or blockchain (e.g., Filecoin, Ceramic, Solana)
+
+🧠 Use AI to classify or enrich metadata (e.g., NLP tagging)
+
+💳 Add stablecoin payment logic (e.g., USDFC or token-gated VC issuance)
+
+🔐 Expand VC types: academic credentials, contribution proofs, etc.
+
+📘 Publish full DID Documents on-chain
+---
+
+### 🧪 How to Run
+Open the mwh_bi.ipynb notebook in Jupyter or Google Colab.
+
+Install required Python packages.
+
+Run each cell step-by-step to:
+
+Generate DID + VC
+
+Interact with Dataverse
+
+Sign and verify credential
+
+For full deployment, run backend using Dataverse (Java) stack.
+---
+
+### 🤝 License
+MIT License – Open Source & Community Driven.
+---
+
+### 👨‍💻 Contributors
+Dev Manoj – DID Architecture & Research
+
+Eshrath Subhani – Documentation, Testing, and Integration
