@@ -1,5 +1,3 @@
-# mwh_bi
-
 # 🛡️ Decentralized Identifier (DID) System with Dataverse
 
 A scalable, GDPR-compliant DID system designed for integration with [Dataverse](https://dataverse.org/), empowering users in cultural heritage domains. The project adheres to W3C DID, DOI, and Handle specifications, aiming to decentralize metadata control using AI and cryptographic standards.
