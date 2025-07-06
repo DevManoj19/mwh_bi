@@ -1,174 +1,106 @@
 # mwh_bi
 
-# Decentralized Identifier (DID) System with Dataverse & Verifiable Credentials
+# 🛡️ Decentralized Identifier (DID) System with Dataverse
 
-A scalable, GDPR-compliant decentralized identity system built to integrate with Dataverse and empower users in cultural heritage, academic research, and decentralized ecosystems. The project adheres to [W3C DID](https://www.w3.org/TR/did-core/), DOI, and Handle specifications, leveraging **DIDKit**, **cryptographic standards**, and optional **AI-driven metadata enhancement**.
+A scalable, GDPR-compliant DID system designed for integration with [Dataverse](https://dataverse.org/), empowering users in cultural heritage domains. The project adheres to W3C DID, DOI, and Handle specifications, aiming to decentralize metadata control using AI and cryptographic standards.
 
 ---
 
 ## 🚀 Project Goals
 
-- Develop a decentralized identity (DID) system
-- Integrate with Dataverse (Java-based research data repository)
-- Ensure GDPR compliance (user-controlled visibility)
-- Implement W3C-compliant DID Documents & Verification Methods
-- Demonstrate AI-assisted metadata validation or enhancement
-- Sign and verify Verifiable Credentials (VCs)
-- Prepare for integration with decentralized storage/payment systems like IPFS or USDFC
+- ✅ Develop a decentralized identity system  
+- ✅ Integrate with Dataverse (Java-based research data repository)  
+- ✅ Ensure GDPR compliance  
+- ✅ Demonstrate AI-driven metadata validation or enhancement  
+- ✅ Follow W3C DID standards  
 
 ---
 
 ## 🧩 Technologies Used
 
-### 🛠 Core Libraries
-| Tool | Purpose |
-|------|---------|
-| `didkit` | DID & Verifiable Credentials (VCs) generation |
-| `pyld` | JSON-LD processing |
-| `requests` | API interaction (Dataverse, DID resolvers) |
-| `cryptography` | Key generation, signature verification |
-| `asyncio` | Asynchronous DID operations |
-| `py-did` / `did-resolver` (optional) | DID resolution abstraction |
-
-### 🧱 Dataverse Backend (External Dependencies)
-- Java 11+
-- Payara Server / GlassFish
-- PostgreSQL 13+
-- Solr (for indexing/search)
+### ✅ Core Dependencies
+- `cryptography` – Key generation, signature verification  
+- `requests` – API interaction (e.g., with DID resolvers or blockchains)  
+- `Java + Payara/GlassFish` – Required by Dataverse backend  
+- `PostgreSQL` – Dataverse data storage  
+- `py-did`, `did-resolver` (optional) – For DID spec compliance  
 
 ---
 
-## 📁 Folder Structure
-
-project-root/
-│
-├── mwh_bi.ipynb # Main Jupyter notebook (code + documentation)
-├── .env # Optional environment file for secure config
-├── README.md # This project overview and setup guide
-
-
----
-
-## 🏗️ Installation Guide
+## 🏗️ Installation
 
 ### 1. Python Dependencies
-
-Install required Python libraries:
-
 ```bash
-pip install didkit pyld requests cryptography
+pip install cryptography requests
 ```
----
+2. External Dependencies (for Dataverse)
+These are not installed in the notebook directly:
 
-### Dataverse Backend Setup (manual)
-Required for full Dataverse API integration.
+ Java 11+
 
-Install Java 11+
+ Payara Server or GlassFish
 
-Deploy Payara Server or GlassFish
+ PostgreSQL 13+
 
-Setup PostgreSQL 13+ with Dataverse schema
-
-Configure Solr for search indexing
-
-Configure .env if needed for API keys
+ Solr (for search indexing)
 
 ---
-### 🔐 Key Functional Blocks
-W3C DID Concepts Implemented
+
+### 📁 Folder Structure
+```bash
+mwh_bi.ipynb        # Main notebook (development + documentation)
+.env                # Environment file for secure keys (if any)
+README.md           # Project overview and setup guide
+```
+
+---
+
+### 🛠️ Key Functional Blocks
+🔐 DID Specification (W3C)
 DID Subject
 
-DID Document (with context and verificationMethod)
+DID Document
 
-Verification Methods (Ed25519 public keys)
+Verification Methods (e.g., public keys)
 
-Service Endpoints (optional)
+Service Endpoints
 
-DID Resolution & Controllers
+Controllers & Resolution
+
 ---
 
-### 📋 Verifiable Credential Workflow
-Generate Ed25519 key using DIDKit
+### 📡 Libraries Explored
+py-did: DID creation and resolution
 
-Create a DID and DID Document
+didkit, identity.com: Optional external integrations
 
-Define a credentialSubject and metadata (e.g., contribution, role)
-
-Sign VC using DIDKit
-
-Verify using DIDKit (errors: [] if success)
-
-Optionally link to Filecoin/IPFS for permanent storage
 ---
 
-### 📡 Example Use Case
-A researcher logs in using a self-sovereign DID.
+### 📌 Example Use Case
+Researcher logs in using a self-sovereign DID.
 
-Metadata about cultural datasets is validated using AI or manually entered.
+Metadata about cultural assets is validated and signed.
 
-The metadata is signed as a verifiable credential and linked to the DID.
+DID document stores endpoints for the data repository.
 
-DID Document stores service endpoints pointing to Dataverse.
+System ensures GDPR compliance by user-controlled metadata visibility.
 
-GDPR-compliance is achieved by user-controlled visibility of metadata.
----
-
-### 📦 Sample Credential Output
-```bash
-json
-{
-  "@context": ["https://www.w3.org/2018/credentials/v1"],
-  "type": ["VerifiableCredential"],
-  "issuer": "did:key:z6Mk...",
-  "issuanceDate": "2025-07-05T00:00:00Z",
-  "credentialSubject": {
-    "id": "did:key:z6Mk...",
-    "contribution": "Digitised 19th-century manuscript"
-  },
-  "proof": {
-    "type": "Ed25519Signature2020",
-    "created": "...",
-    "proofPurpose": "assertionMethod",
-    "verificationMethod": "...",
-    "jws": "..."
-  }
-}
-```
 ---
 
 ### 📈 Future Work
-🔗 Integrate with IPFS or blockchain (e.g., Filecoin, Ceramic, Solana)
+🔗 Integrate with IPFS or blockchain (e.g., Ceramic, Solana)
 
-🧠 Use AI to classify or enrich metadata (e.g., NLP tagging)
+🧠 Use AI to tag or classify datasets based on metadata
 
-💳 Add stablecoin payment logic (e.g., USDFC or token-gated VC issuance)
+🔐 Add support for VC (Verifiable Credentials)
 
-🔐 Expand VC types: academic credentials, contribution proofs, etc.
-
-📘 Publish full DID Documents on-chain
 ---
-
-### 🧪 How to Run
-Open the mwh_bi.ipynb notebook in Jupyter or Google Colab.
-
-Install required Python packages.
-
-Run each cell step-by-step to:
-
-Generate DID + VC
-
-Interact with Dataverse
-
-Sign and verify credential
-
-For full deployment, run backend using Dataverse (Java) stack.
----
-
 ### 🤝 License
-MIT License – Open Source & Community Driven.
+MIT License – Open Source & Community Driven
+
 ---
 
 ### 👨‍💻 Contributors
-DevManoj19 – DID Architecture & Research
+DevManoj19  – DID Architecture & Research
 
-Eshrath Subhani – Documentation, Testing, and Integration
+Eshrath Subhani – Documentation & Testing
