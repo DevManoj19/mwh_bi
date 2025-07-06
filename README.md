@@ -32,14 +32,17 @@ A scalable, GDPR-compliant DID system designed for integration with [Dataverse](
 
 Run: `pip install cryptography requests`
 
+---
+
 ### 2. External Dependencies (for Dataverse)
 These are not installed in the notebook directly:
 
 - Java 11+  
 - Payara Server or GlassFish  
 - PostgreSQL 13+  
-- Solr (for search indexing)  
+- Solr (for search indexing)
 
+  ---
 
 📁 Folder Structure
 bash
@@ -48,6 +51,9 @@ Edit
 mwh_bi.ipynb        # Main notebook (development + documentation)
 .env                # Environment file for secure keys (if any)
 README.md           # Project overview and setup guide
+
+  ---
+
 
 🛠️ Key Functional Blocks
 🔐 DID Specification (W3C)
@@ -62,9 +68,9 @@ Service Endpoints
 Controllers & Resolution
 
 📡 Libraries Explored
-py-did: DID creation and resolution
+py-did – DID creation and resolution
 
-didkit, identity.com: Optional external integrations
+didkit, identity.com – Optional external integrations
 
 📌 Example Use Case
 Researcher logs in using a self-sovereign DID.
@@ -73,29 +79,22 @@ Metadata about cultural assets is validated and signed.
 
 DID document stores endpoints for the data repository.
 
-System ensures GDPR compliance by user-controlled metadata visibility.
+System ensures GDPR compliance via user-controlled metadata visibility.
 
 📈 Future Work
 🔗 Integrate with IPFS or blockchain (e.g., Ceramic, Solana)
 
 🧠 Use AI to tag or classify datasets based on metadata
 
-🔐 Add support for VC (Verifiable Credentials)
+🔐 Add support for Verifiable Credentials (VC)
 
 🤝 License
 MIT License – Open Source & Community Driven
 
 👨‍💻 Contributors
 Dev Manoj – DID Architecture & Research
+
 Eshrath Subhani – Documentation & Testing
-
-
-
-
-
-
-
-
 
 
 
