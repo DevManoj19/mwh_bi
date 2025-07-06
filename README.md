@@ -169,6 +169,6 @@ MIT License – Open Source & Community Driven.
 ---
 
 ### 👨‍💻 Contributors
-Dev Manoj – DID Architecture & Research
+DevManoj19 – DID Architecture & Research
 
 Eshrath Subhani – Documentation, Testing, and Integration
