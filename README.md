@@ -42,59 +42,60 @@ These are not installed in the notebook directly:
 - PostgreSQL 13+  
 - Solr (for search indexing)
 
-  ---
+---
 
-📁 Folder Structure
-bash
-Copy
-Edit
+## 📁 Folder Structure
+
 mwh_bi.ipynb        # Main notebook (development + documentation)
 .env                # Environment file for secure keys (if any)
 README.md           # Project overview and setup guide
 
-  ---
+---
 
 
-🛠️ Key Functional Blocks
-🔐 DID Specification (W3C)
-DID Subject
+---
 
-DID Document
+## 🛠️ Key Functional Blocks
 
-Verification Methods (e.g., public keys)
+### 🔐 DID Specification (W3C)
+- **DID Subject**
+- **DID Document**
+- **Verification Methods** (e.g., public keys)
+- **Service Endpoints**
+- **Controllers & Resolution**
 
-Service Endpoints
+---
 
-Controllers & Resolution
+### 📡 Libraries Explored
+- `py-did` – DID creation and resolution  
+- `didkit`, `identity.com` – Optional external integrations
 
-📡 Libraries Explored
-py-did – DID creation and resolution
+---
 
-didkit, identity.com – Optional external integrations
+## 📌 Example Use Case
 
-📌 Example Use Case
-Researcher logs in using a self-sovereign DID.
+1. Researcher logs in using a self-sovereign DID  
+2. Metadata about cultural assets is validated and signed  
+3. DID document stores endpoints for the data repository  
+4. System ensures GDPR compliance via user-controlled metadata visibility
 
-Metadata about cultural assets is validated and signed.
+---
 
-DID document stores endpoints for the data repository.
+## 📈 Future Work
 
-System ensures GDPR compliance via user-controlled metadata visibility.
+- 🔗 Integrate with IPFS or blockchain (e.g., Ceramic, Solana)  
+- 🧠 Use AI to tag or classify datasets based on metadata  
+- 🔐 Add support for Verifiable Credentials (VC)
 
-📈 Future Work
-🔗 Integrate with IPFS or blockchain (e.g., Ceramic, Solana)
+---
 
-🧠 Use AI to tag or classify datasets based on metadata
+## 🤝 License
 
-🔐 Add support for Verifiable Credentials (VC)
+**MIT License** – Open Source & Community Driven
 
-🤝 License
-MIT License – Open Source & Community Driven
+---
 
-👨‍💻 Contributors
-Dev Manoj – DID Architecture & Research
+## 👨‍💻 Contributors
 
-Eshrath Subhani – Documentation & Testing
-
-
-
+- **Dev Manoj** – DID Architecture & Research  
+- **Eshrath Subhani** – Documentation & Testing
